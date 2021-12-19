@@ -1,6 +1,8 @@
 FROM ubuntu:latest
 
 # Install the packages we need. Avahi will be included
+# Start with headless tzdata, to get the remaining installation going 
+# TODO timezone is hardcoded...
 RUN apt-get update
 RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ENV DEBIAN_FRONTEND=noninteractive
@@ -19,7 +21,6 @@ RUN apt-get -y install \
         python3-cups \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
-
 
 # This will use port 631
 EXPOSE 631
