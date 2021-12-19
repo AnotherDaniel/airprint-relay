@@ -13,7 +13,8 @@ if [ -z "$CUPSPASSWORD" ]; then
 fi
 
 if [ $(grep -ci $CUPSADMIN /etc/shadow) -eq 0 ]; then
-    adduser -S -G lpadmin --no-create-home $CUPSADMIN 
+    adduser --system --no-create-home $CUPSADMIN
+    addgroup --quiet $CUPSADMIN lpadmin
 fi
 echo $CUPSADMIN:$CUPSPASSWORD | chpasswd
 
@@ -31,5 +32,5 @@ fi
 cp /config/printers.conf /etc/cups/printers.conf
 
 /usr/sbin/avahi-daemon --daemonize
-/root/printer-update.sh &
+/root/printer_update.sh &
 exec /usr/sbin/cupsd -f
