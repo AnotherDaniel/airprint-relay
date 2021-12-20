@@ -37,7 +37,7 @@ docker run --name cups --restart unless-stopped  --net host\
   -v <your config dir>:/config \
   -e CUPSADMIN="<username>" \
   -e CUPSPASSWORD="<password>" \
-  cups-avahi-airprint_cups
+  agoodcontainer/cups-avahi-airprint:latest
 ```
 
 ### Example docker-compose file
