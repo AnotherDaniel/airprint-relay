@@ -2,7 +2,7 @@
 
 Fork from [chuckcharlie/cups-avahi-airprint](https://github.com/chuckcharlie/cups-avahi-airprint)
 
-I rebased this on Ubuntu, because I need a printer driver for an old Samsung desk-laser (CLP-365), and got tired of trying to figure out if/where this was available in Alpine. It runs a CUPS instance that is meant as an AirPrint relay for printers that are already on the network but not AirPrint capable. Otherwise, this is a nice, smooth, and simple setup that works well for me.
+I rebased this on Ubuntu, because I need a printer driver for an old Samsung desk-laser (CLP-365), and got tired of trying to figure out if/where this was available in Alpine. It runs a CUPS instance that is meant as an AirPrint relay for printers that are already on the network but not AirPrint capable. Generally, this is a nice, smooth, and simple setup that works well for me.
 
 ## Get it running
 
