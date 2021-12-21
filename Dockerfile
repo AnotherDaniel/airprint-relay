@@ -13,8 +13,9 @@ RUN apt-get -y dist-upgrade
 RUN apt-get -y install \
         cups \
 	cups-filters \
-	printer-driver-gutenprint \
-        printer-driver-foo2zjs \
+        printer-driver-all \
+        openprinting-ppds \
+        hplip \
 	avahi-daemon \
 	inotify-tools \
         rsync \

@@ -1,8 +1,8 @@
 version: "3"
 services:
-  cups:
+  airprint-relay:
     build: .
-    container_name: cups
+    container_name: airprint-relay
     volumes:
       - /opt/cups/config:/config
       - /opt/cups/services:/services
@@ -12,10 +12,4 @@ services:
     network_mode: "host"
     ports:
       - "631:631"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.cups.rule=Host(`cups.central.home`)"
-      - "traefik.http.services.cups.loadbalancer.server.port=631"
-      - "traefik.http.services.cups.loadbalancer.passhostheader=false"
-#      - "traefik.http.routers.cups.rule=Host(`localhost`)"
     restart: unless-stopped
