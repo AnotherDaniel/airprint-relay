@@ -1,4 +1,4 @@
-name: build multiarch image
+name: build multiarch release image
 
 on:
   release:
