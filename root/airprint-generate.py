@@ -163,7 +163,7 @@ class AirPrintGenerate(object):
                 service.append(path)
 
                 desc = Element('txt-record')
-                desc.text = 'note=%s' % (v['printer-info'])
+                desc.text = 'note=%s' % (v['printer-location'])
                 service.append(desc)
 
                 product = Element('txt-record')
