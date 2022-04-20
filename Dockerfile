@@ -1,10 +1,13 @@
 FROM ubuntu:latest
 
+# Needs to be a valid entry in /usr/share/zoneinfo
+#ENV TZ=Etc/UTC
+ENV TZ=Europe/Berlin  
+
 # Install the packages we need. Avahi will be included
 # Start with headless tzdata, to get the remaining installation going 
-# TODO timezone is hardcoded...
 RUN apt-get update
-RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y tzdata
 RUN dpkg-reconfigure --frontend noninteractive tzdata
