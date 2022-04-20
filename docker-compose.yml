@@ -13,3 +13,9 @@ services:
     ports:
       - "631:631"
     restart: unless-stopped
+    # example routing setup for traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.airprint-relay.rule=Host(`airprint-relay.example.org`)"
+      - "traefik.http.services.airprint-relay.loadbalancer.server.port=631"
+      - "traefik.http.services.airprint-relay.loadbalancer.passhostheader=false"
